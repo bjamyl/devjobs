@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Listing;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +15,34 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         \App\Models\User::factory(10)->create();
+        // Listing::create([
+        //     'title'=> 'React-Django Developer',
+        //     'tags' => 'react, django',
+        //     'company' => 'Spexbyte Inc',
+        //     'location' => 'Accra, GA',
+        //     'email' => 'info@spexbyte.com',
+        //     'website' => 'https://www.spexbyte.com',
+        //     'description' => 'His palms are sweaty, knees weak arms are heavy,
+        //     there is vomit on his sweater already. Knock knock, let the devil in,
+        //     malevolent as I have ever been.'
+
+        // ]);
+
+        // Listing::create([
+        //     'title' => 'Dart Mobile Developer',
+        //     'tags' => 'dart, flutter',
+        //     'company' => 'Baunfire',
+        //     'location' => 'Boston MA',
+        //     'email' => 'info@baunfire.com',
+        //     'website'=> 'https://www.baunfire.com',
+        //     'description' => 'No games Imma change what you call rage.
+        //     Turn this room into dogs caged. I was playing in the beginning,
+        //     the mood all changed, I been chewed and spit out and booed off stage.
+        //     But I kept writing and stepwriting the next cipher. Best believe someone is
+        //     paying the pied piper.'
+        // ]);
+
+        Listing::factory(6)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
