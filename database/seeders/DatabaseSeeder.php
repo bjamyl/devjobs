@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Listing;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();
         // Listing::create([
         //     'title'=> 'React-Django Developer',
         //     'tags' => 'react, django',
@@ -42,7 +43,14 @@ class DatabaseSeeder extends Seeder
         //     paying the pied piper.'
         // ]);
 
-        Listing::factory(6)->create();
+        $user = User::factory()->create([
+            'name' => 'Emily Addo',
+            'email' => 'emily@carnivalmail.com'
+        ]);
+
+        Listing::factory(6)->create([
+            'user_id' => $user->id
+        ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
